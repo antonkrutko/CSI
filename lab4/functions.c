@@ -16,12 +16,12 @@ void makeLower(char*line)
 void makeUpper(char*line)
 {
     int i;
+    for(i=0; i<strlen(line); i++)
     {
-        for(i=0; i<strlen(line); i++)
-        {
-            putchar( toupper(line) );
-        }
+        char resultChar = (char) toupper( (int) *(line+i) );
+        printf("%c", resultChar);
     }
+    printf("\n");
 }
 
 void makeChange(char*line)
@@ -29,13 +29,16 @@ void makeChange(char*line)
     int i;
     for(i=0; i < strlen(line); i++);
     {
-        if ( isupper(line) )
+        if ( isupper(line) != 0 )
         {
-            putchar( toupper(line) );
+            char resultChar = (char) tolower( (int) *(line+i) );
         }
         else
-            putchar( toupper(line) );
+        {
+            char resultChar = (char) toupper( (int) *(line+i) );
+        }
     }
+    printf("%c", resultChar);
 }
 
 void makeName (char*line)
